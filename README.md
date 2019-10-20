@@ -1,4 +1,5 @@
 # OCR-Android
+Using Firebase ML-Kit
 Simply scan you images for text or numbers either from mobile camera or select single and multiple images from gallery.
 With additional Select only Number option for getting only mobile numbers from images.
 
