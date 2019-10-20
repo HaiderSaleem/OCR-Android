@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@mipmap/bg3">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:weightSum="3">
+            <TextView
+                android:text="Only Number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="10dp"
+
+                />
+            <Switch
+                android:id="@+id/scNumber"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llImage"
+        android:layout_below="@+id/llSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <ImageView
+            android:id="@+id/ivScreenShot"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50sp"
+            android:layout_marginTop="20dp"
+            android:src="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_below="@+id/llImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+        <Button
+            android:id="@+id/btnMultipleImages"
+            android:text="Images"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnSingleImage"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Image"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnDetect"
+            android:text="Detect"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llText"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50sp"
+        android:layout_below="@+id/llButtons">
+        <EditText
+            android:id="@+id/etText"
+            android:background="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llOptionButtons"
+        android:layout_below="@+id/llText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/btnClear"
+            android:text="Clear"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/btnCopy"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Copy"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

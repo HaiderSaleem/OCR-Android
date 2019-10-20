@@ -1,4 +1,4 @@
-package com.example.abdulrehman.ocr;
+package com.debugger.ocr;
 
 import org.junit.Test;
 

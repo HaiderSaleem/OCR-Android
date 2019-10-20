@@ -1,4 +1,4 @@
-package com.example.abdulrehman.ocr;
+package com.debugger.ocr;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
