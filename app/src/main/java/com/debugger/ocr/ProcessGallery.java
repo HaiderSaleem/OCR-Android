@@ -242,10 +242,11 @@ public class ProcessGallery extends AppCompatActivity {
                 for (Task<FirebaseVisionText> result : results) {
 
                     String resultText = result.getResult().getText();
-                    resultText = resultText.replace(" ", "");
+                    //resultText = resultText.replace(" ", "");
                     resultText = resultText.replace("-", "");
                     resultText = resultText.replace("(", "");
                     resultText = resultText.replace(")", "");
+                    resultText = resultText.replace("]", "");
                     String str[] = resultText.split("\n");
 
                     for (String i : str) {
@@ -258,7 +259,7 @@ public class ProcessGallery extends AppCompatActivity {
 
                         }
                         if (!stringCheck)
-                            if (check && i.matches("^(\\+\\d{1,9}[- ]?)?\\d{10}$")) {
+                            if (check && i.matches("^(\\+\\d{1,9}[- ]?)?\\d{3}[ ]?\\d{7}$")) {
                                 allText.add(i);
                                 allText.add("\n");
                                // Toast.makeText(getApplicationContext(), "Done: matching numbers", Toast.LENGTH_SHORT).show();
@@ -274,6 +275,7 @@ public class ProcessGallery extends AppCompatActivity {
                 }
                 String finalText = allText.toString().replace("[","");
                 finalText = finalText.replace(",","");
+                finalText = finalText.replace("]","");
                 etText.append(finalText);
                 progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
