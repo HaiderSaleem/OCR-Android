@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/android projects/OCR-Android/app/src/main/res/drawable/bg_button.xml" value="0.37864583333333335" />
         <entry key="..\:/android projects/OCR-Android/app/src/main/res/layout/activity_camera.xml" value="0.358695652173913" />
+        <entry key="..\:/android projects/OCR-Android/app/src/main/res/layout/activity_gallery.xml" value="0.35054347826086957" />
         <entry key="..\:/android projects/OCR-Android/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/android projects/OCR-Android/app/src/main/res/layout/activity_select.xml" value="0.35054347826086957" />
         <entry key="..\:/android projects/OCR-Android/app/src/main/res/layout/camera_ocr.xml" value="0.358695652173913" />
         <entry key="..\:/android projects/OCR-Android/app/src/main/res/layout/home.xml" value="0.3625" />
       </map>
