@@ -1,11 +1,9 @@
 package com.debugger.ocr.activity;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -15,8 +13,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageAnalysis;
@@ -24,7 +22,6 @@ import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.debugger.ocr.R;
@@ -46,26 +43,10 @@ public class CameraActivity extends AppCompatActivity {
     private EditText etOutput;
     private LinearLayout llButtons;
     private static final String TAG = CameraActivity.class.getName();
-    Button bClear, bRegex, bSend;
+    Button bClear, bRegex, bCopy;
     StringBuilder strBuilder1;
     ScrollView scr;
     Boolean check = false;
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                try {
-                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-                        setupCamera();
-                    }
-                } catch (Exception e) {
-                    Log.d(TAG, "onRequestPermissionsResult: " + e);
-                }
-            }
-        }
-    }
 
     private void setupCamera() {
         ListenableFuture<ProcessCameraProvider> cameraProviderListenableFuture = ProcessCameraProvider.getInstance(this);
@@ -119,7 +100,7 @@ public class CameraActivity extends AppCompatActivity {
         tvLabel = findViewById(R.id.tv_label);
         etOutput = findViewById(R.id.et_output);
         bClear = findViewById(R.id.b_clear);
-        bSend = findViewById(R.id.b_send);
+        bCopy = findViewById(R.id.b_copy);
         llButtons = findViewById(R.id.llButtons);
         bRegex = findViewById(R.id.b_regex);
         scr = findViewById(R.id.scroll_view);
@@ -191,12 +172,11 @@ public class CameraActivity extends AppCompatActivity {
                 etOutput.setText(all_number);
                 etOutput.requestFocus();
             });
-            bSend.setOnClickListener(v -> {
-
+            bCopy.setOnClickListener(v -> {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("Copied", etOutput.getText().toString());
                 clipboard.setPrimaryClip(clip);
-
+                Toast.makeText(getApplicationContext(),"Copied Successfully", Toast.LENGTH_SHORT).show();
             });
 
         });

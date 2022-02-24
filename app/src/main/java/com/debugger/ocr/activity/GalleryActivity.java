@@ -14,6 +14,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Scroller;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,8 +43,8 @@ public class GalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gallery);
 
         initViews();
-        setListeners();
         recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
+        setListeners();
     }
 
     private void initViews() {
@@ -67,6 +68,7 @@ public class GalleryActivity extends AppCompatActivity {
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("Copied", etText.getText().toString());
             clipboard.setPrimaryClip(clip);
+            Toast.makeText(getApplicationContext(),"Copied Successfully", Toast.LENGTH_SHORT).show();
         });
     }
 
