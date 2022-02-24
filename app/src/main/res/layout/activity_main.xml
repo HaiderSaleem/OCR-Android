@@ -1,96 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/common_google_signin_btn_text_dark_default"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/get_single"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginBottom="12dp"
-        android:text="IMAGE"
-        app:layout_constraintBottom_toTopOf="@+id/txt"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/get"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="12dp"
-        android:text="IMAGES"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/txt"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/detect_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="12dp"
-        android:text="Detect"
-        app:layout_constraintBottom_toTopOf="@+id/txt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
-        app:layout_constraintStart_toEndOf="@+id/get" />
-
-    <EditText
-        android:id="@+id/txt"
-        android:layout_width="311dp"
-        android:layout_height="124dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="68dp"
-        android:background="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="parent" />
+    android:background="@color/colorWhite">
 
     <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="302dp"
-        android:layout_height="290dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/iv_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_camera"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@mipmap/logo" />
 
     <Button
-        android:id="@+id/clear"
+        android:id="@+id/btn_camera"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:text="Clean"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button"
+        android:text="@string/camera"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button"
+        android:text="@string/gallery"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/btn_camera"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt" />
-
-    <Button
-        android:id="@+id/Send"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:text="Copy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.734"
-        app:layout_constraintStart_toEndOf="@+id/clear"
-        app:layout_constraintTop_toBottomOf="@+id/txt" />
-
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginTop="20dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
