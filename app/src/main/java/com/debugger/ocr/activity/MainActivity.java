@@ -23,13 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Button btnGallery = findViewById(R.id.btn_gallery);
         Button btnCamera = findViewById(R.id.btn_camera);
 
-        btnGallery.setOnClickListener(v -> {
-            checkGalleryPermission();
-        });
+        btnGallery.setOnClickListener(v -> checkGalleryPermission());
 
-        btnCamera.setOnClickListener(v -> {
-            checkCameraPermission();
-        });
+        btnCamera.setOnClickListener(v -> checkCameraPermission());
     }
 
     @Override
